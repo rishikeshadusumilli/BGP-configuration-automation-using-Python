@@ -33,8 +33,8 @@ def deviceConfig(ip, username, password):
     print("show running-config complete output for "+ip+" is copied into runOuput file in the current directory.")
  	
     name="runOutput"
-    s3Key='AKIAIQGZQZUOCYB2PSKQ'
-    s3Secret='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'
+    s3Key='**************'
+    s3Secret='*********************'
     s3Connection=boto.connect_s3(s3Key,s3Secret)
     s3Bucket=s3Connection.get_bucket("aws-lab3")    
     i=key(s3Bucket)
