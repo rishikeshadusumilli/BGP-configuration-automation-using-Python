@@ -1,0 +1,102 @@
+
+R1_Adusumilli(config)#do show run 
+Building configuration...
+
+Current configuration : 1133 bytes
+!
+version 12.4
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+!
+hostname R1_Adusumilli
+!
+boot-start-marker
+boot-end-marker
+!
+!
+no aaa new-model
+memory-size iomem 5
+!
+!
+ip cef
+no ip domain lookup
+ip domain name netman.com
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+username R1_Adusumilli privilege 15 secret 5 $1$Kgw8$2PJ0qJS2zRhHxQZ0OQbSQ1
+!
+!
+ip ssh version 2
+! 
+!
+!
+!
+!
+interface Loopback0
+ ip address 10.10.10.1 255.255.255.255
+!
+interface Loopback1
+ ip address 11.11.11.1 255.255.255.255
+!
+interface FastEthernet0/0
+ ip address 198.51.100.1 255.255.255.0
+ duplex auto
+ speed auto
+!
+router bgp 100
+ no synchronization
+ bgp log-neighbor-changes
+ neighbor 20.20.20.1 remote-as 100
+ neighbor 22.22.22.1 remote-as 100
+ neighbor 22.22.22.1 update-source Loopback0
+ neighbor 198.51.100.3 remote-as 100
+ no auto-summary
+!
+no ip http server
+no ip http secure-server
+!
+!
+!
+!
+!
+!
+control-plane
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+line con 0
+ exec-timeout 0 0
+ privilege level 15
+ logging synchronous
+line aux 0
+ exec-timeout 0 0
+ privilege level 15
+ logging synchronous
+line vty 0 4
+ login local
+!
+!
+end

@@ -1,0 +1,14 @@
+PING 198.51.100.1 (198.51.100.1) 56(84) bytes of data.
+64 bytes from 198.51.100.1: icmp_req=1 ttl=255 time=7.38 ms
+64 bytes from 198.51.100.1: icmp_req=2 ttl=255 time=4.96 ms
+
+--- 198.51.100.1 ping statistics ---
+2 packets transmitted, 2 received, 0% packet loss, time 1001ms
+rtt min/avg/max/mdev = 4.966/6.175/7.384/1.209 ms
+PING 198.51.100.3 (198.51.100.3) 56(84) bytes of data.
+64 bytes from 198.51.100.3: icmp_req=1 ttl=255 time=10.5 ms
+64 bytes from 198.51.100.3: icmp_req=2 ttl=255 time=7.55 ms
+
+--- 198.51.100.3 ping statistics ---
+2 packets transmitted, 2 received, 0% packet loss, time 1004ms
+rtt min/avg/max/mdev = 7.551/9.049/10.547/1.498 ms
